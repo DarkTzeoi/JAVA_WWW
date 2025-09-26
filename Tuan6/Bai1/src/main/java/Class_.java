@@ -1,2 +1,12 @@
-package PACKAGE_NAME;public class Class_ {
+import lombok.*;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+public class Class_ {
+    private String classId;
+    private String className;
+
 }
