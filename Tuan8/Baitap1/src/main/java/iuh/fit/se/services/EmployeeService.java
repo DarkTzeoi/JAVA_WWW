@@ -7,6 +7,9 @@ import java.util.List;
 public interface EmployeeService {
     void save(Employee employee);
     List<Employee> findALl();
-    void delete(Employee employee);
+    void deleteById(int id);
     Employee findById(int id);
+    List<Employee> findByName(String name);
+
+
 }

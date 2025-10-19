@@ -26,12 +26,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void delete(Employee employee) {
-        this.employeeRepository.delete(employee);
+    public void deleteById(int id) {
+        this.employeeRepository.deleteById(id);
     }
 
     @Override
     public Employee findById(int id) {
         return this.employeeRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Employee> findByName(String name) {
+        return employeeRepository.findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(name, name);
     }
 }
