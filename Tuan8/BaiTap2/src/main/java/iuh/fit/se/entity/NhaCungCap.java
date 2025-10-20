@@ -13,8 +13,7 @@ import java.util.Set;
 @Table(name = "nhacungcap")
 public class NhaCungCap {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int maNCC;
+    private String maNCC;
     private String tenNhaCC;
     private String diaChi;
     private String soDienThoai;

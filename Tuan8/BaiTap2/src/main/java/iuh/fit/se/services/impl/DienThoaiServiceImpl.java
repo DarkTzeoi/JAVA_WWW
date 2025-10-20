@@ -16,6 +16,7 @@ public class DienThoaiServiceImpl implements DienThoaiService {
     public DienThoaiServiceImpl(DienThoaiRepository dienThoaiRepository){
         this.dienThoaiRepository = dienThoaiRepository;
     }
+
     @Override
     public List<DienThoai> findByNhaCungCap(String tenNCC) {
         return dienThoaiRepository.findDienThoaiByNhaCungCap_TenNhaCC(tenNCC);
@@ -27,7 +28,7 @@ public class DienThoaiServiceImpl implements DienThoaiService {
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(String id) {
         this.dienThoaiRepository.deleteById(id);
     }
 
@@ -39,5 +40,10 @@ public class DienThoaiServiceImpl implements DienThoaiService {
     @Override
     public List<DienThoai> findByName(String tenDT) {
         return this.dienThoaiRepository.findDienThoaiByTenDTContainingIgnoreCase(tenDT);
+    }
+
+    @Override
+    public List<DienThoai> findByMaNCC(String maNCC) {
+        return this.dienThoaiRepository.findByNhaCungCap_MaNCC(maNCC);
     }
 }
